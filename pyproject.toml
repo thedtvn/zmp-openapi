@@ -1,0 +1,33 @@
+[project]
+name = "zmp-openapi"
+dynamic = ["version"]
+description = "SDK for ZaloMiniApp OpenAPI with Python"
+requires-python = ">=3.10"
+license = "MIT"
+readme = { file = "README.md", content-type = "text/markdown" }
+license-files = ["LICENSE"]
+authors = [{ name = "The DT", email = "duongtuan30306@gmail.com" }]
+
+dependencies = [
+    "aiohttp>=3.9",
+    "requests>=2.31",
+    "pydantic>=2.5"
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.dynamic]
+version = { attr = "zmp_openapi.version.__version__" }
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pdoc==16.0.0",
+]
+
+[tool.uv]
+package = true
